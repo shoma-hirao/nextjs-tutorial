@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <header>
+        <nav>
+          <Link href="/"> Home</Link>
+          <Link href="/events"> Events</Link>
+          <Link href="/about-us"> About Us</Link>
+        </nav>
+      </header>
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
@@ -109,6 +117,10 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <footer>
+        {/* 著作権表記追加 */}
+        <p> © 2022 Time to Code - Project Next.js Tutorial</p>
+      </footer>
     </>
   );
 }
