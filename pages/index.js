@@ -22,7 +22,44 @@ export default function Home() {
           <Link href="/about-us"> About Us</Link>
         </nav>
       </header>
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <Link href="">
+          <h2> Events in London</h2>
+          <p>
+            cosmopolitan cities in the world, made up of a multi-ethnic
+            population. The applied name in Chinese characters is written
+            &quot;Lun Dun,&quot; and the city has long been in contact with
+            Japan. London has more than 300 museums and art galleries of all
+            sizes combined. There are many universities, technical schools and
+            language schools, and international students from all over the world
+            come to study here.
+          </p>
+        </Link>
+        <Link href="">
+          <h2> Events in Francisco</h2>
+          <p>
+            cosmopolitan cities in the world, made up of a multi-ethnic
+            population. The applied name in Chinese characters is written
+            &quot;Lun Dun,&quot; and the city has long been in contact with
+            Japan. London has more than 300 museums and art galleries of all
+            sizes combined. There are many universities, technical schools and
+            language schools, and international students from all over the world
+            come to study here.
+          </p>
+        </Link>
+        <Link href="">
+          <h2> Events in Barcelona</h2>
+          <p>
+            cosmopolitan cities in the world, made up of a multi-ethnic
+            population. The applied name in Chinese characters is written
+            &quot;Lun Dun,&quot; and the city has long been in contact with
+            Japan. London has more than 300 museums and art galleries of all
+            sizes combined. There are many universities, technical schools and
+            language schools, and international students from all over the world
+            come to study here.
+          </p>
+        </Link>
+      </main>
       <footer>
         {/* 著作権表記追加 */}
         <p> © 2022 Time to Code - Project Next.js Tutorial</p>
