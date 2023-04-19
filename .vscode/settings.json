@@ -2,5 +2,12 @@
     "editor.formatOnSave": true,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-    }
+    },
+    // Specify paths/files to ignore.
+    "cSpell.ignorePaths": [
+        "*.json",
+    ],
+    "cSpell.words": [
+        "apos"
+    ]
 }
