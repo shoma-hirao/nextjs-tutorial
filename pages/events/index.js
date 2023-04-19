@@ -9,7 +9,7 @@ const Page = () => {
           <h2> Events in London</h2>
         </Link>
         <Link href="">
-          <h2> Events in Francisco</h2>
+          <h2> Events in San Francisco</h2>
         </Link>
         <Link href="">
           <h2> Events in Barcelona</h2>
