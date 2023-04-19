@@ -32,7 +32,6 @@ export default function Home({ data }) {
         ))}
       </main>
       <footer>
-        {/* 著作権表記追加 */}
         <p> © 2022 Time to Code - Project Next.js Tutorial</p>
       </footer>
     </>
