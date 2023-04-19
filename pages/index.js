@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -23,42 +23,13 @@ export default function Home() {
         </nav>
       </header>
       <main className={styles.main}>
-        <Link href="">
-          <h2> Events in London</h2>
-          <p>
-            cosmopolitan cities in the world, made up of a multi-ethnic
-            population. The applied name in Chinese characters is written
-            &quot;Lun Dun,&quot; and the city has long been in contact with
-            Japan. London has more than 300 museums and art galleries of all
-            sizes combined. There are many universities, technical schools and
-            language schools, and international students from all over the world
-            come to study here.
-          </p>
-        </Link>
-        <Link href="">
-          <h2> Events in Francisco</h2>
-          <p>
-            cosmopolitan cities in the world, made up of a multi-ethnic
-            population. The applied name in Chinese characters is written
-            &quot;Lun Dun,&quot; and the city has long been in contact with
-            Japan. London has more than 300 museums and art galleries of all
-            sizes combined. There are many universities, technical schools and
-            language schools, and international students from all over the world
-            come to study here.
-          </p>
-        </Link>
-        <Link href="">
-          <h2> Events in Barcelona</h2>
-          <p>
-            cosmopolitan cities in the world, made up of a multi-ethnic
-            population. The applied name in Chinese characters is written
-            &quot;Lun Dun,&quot; and the city has long been in contact with
-            Japan. London has more than 300 museums and art galleries of all
-            sizes combined. There are many universities, technical schools and
-            language schools, and international students from all over the world
-            come to study here.
-          </p>
-        </Link>
+        {data.map((ev) => (
+          <Link key={ev.id} href={"/events/${ev.id}"}>
+            <Image width={200} height={100} alt={ev.title} src={ev.image} />
+            <h2>{ev.title}</h2>
+            <p>{ev.description}</p>
+          </Link>
+        ))}
       </main>
       <footer>
         {/* 著作権表記追加 */}
@@ -66,4 +37,13 @@ export default function Home() {
       </footer>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const { events_categories } = await import("/data/data.json");
+  return {
+    props: {
+      data: events_categories,
+    },
+  };
 }
