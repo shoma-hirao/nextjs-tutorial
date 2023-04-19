@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Page = () => {
+const EventsPage = () => {
   return (
     <div>
       <h1>Events us Page</h1>
@@ -19,4 +19,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default EventsPage;
