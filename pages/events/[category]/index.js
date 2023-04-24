@@ -1,22 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
+import CategoryEvents from "@/src/components/events/categoryEvent";
 
-const EventsCategoryPage = ({ data, pageName }) => {
-  return (
-    <div>
-      <h1>Events in {pageName}</h1>
-      <div>
-        {data.map((ev) => (
-          <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`}>
-            <Image width={300} height={300} alt={ev.title} src={ev.image} />
-            <h2>{ev.title}</h2>
-            <p>{ev.description}</p>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-};
+const EventsCategoryPage = ({ data, pageName }) => (
+  <CategoryEvents data={data} pageName={pageName} />
+);
 
 export default EventsCategoryPage;
 
