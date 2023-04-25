@@ -4,8 +4,8 @@ const EventsDetailPage = ({ data }) => {
   console.log(data);
   return (
     <div>
-      <Image src={data.image} width={1000} height={500} alt={data.title} />
       <h1>{data.title}</h1>
+      <Image src={data.image} width={1000} height={500} alt={data.title} />
       <p>{data.description}</p>
     </div>
   );
