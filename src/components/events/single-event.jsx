@@ -2,12 +2,21 @@ import React from "react";
 import Image from "next/image";
 
 const SingleEvent = ({ data }) => {
+  const onSubmit = () => {};
   return (
-    <div>
+    <div className="event_single_page">
       <h1>{data.title}</h1>
       <Image src={data.image} width={1000} height={500} alt={data.title} />
       <p>{data.description}</p>
-      <input type="email" /> <button>Submit</button>
+      <form onSubmit={onSubmit} className="email_registration">
+        <label>Get Registered for this event!</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Please insert your email here"
+        />
+        <button type="button">Submit</button>
+      </form>
     </div>
   );
 };
