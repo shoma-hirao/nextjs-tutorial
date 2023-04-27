@@ -31,6 +31,11 @@ export default function handler(req, res) {
   }
   if (method === "POST") {
     const { email, eventId } = JSON.parse(req.body);
+
+    if (!email | !email.includes("@")) {
+      return res.status(422).json({ message: "Invalid email address" });
+    }
+
     const newAllEvents = allEvents.map((event) => {
       if (event.id === eventId) {
         if (event.emails_registered.includes(email)) {
@@ -51,7 +56,7 @@ export default function handler(req, res) {
       JSON.stringify({ events_categories, allEvents: newAllEvents })
     );
     res.status(200).json({
-      message: `You has been registered successfully with the email: ${email} ${eventId}`,
+      message: `You has been registered successfully with the email: ${email} for the event: ${eventId}`,
     });
   }
 }
