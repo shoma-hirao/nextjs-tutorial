@@ -24,7 +24,6 @@ export default function handler(req, res) {
   const { method } = req;
 
   const filePath = buildPath();
-  console.log(filePath);
   const { events_categories, allEvents } = extractData(filePath);
   if (!allEvents) {
     return res.status(404).json({ status: 404, message: "No events found" });
