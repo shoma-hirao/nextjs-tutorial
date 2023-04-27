@@ -1,13 +1,13 @@
-import CategoryEvents from "@/src/components/events/categoryEvent";
+import CategoryEvent from "@/src/components/events/categoryEvent";
 
 const EventsCategoryPage = ({ data, pageName }) => (
-  <CategoryEvents data={data} pageName={pageName} />
+  <CategoryEvent data={data} pageName={pageName} />
 );
 
 export default EventsCategoryPage;
 
 export async function getStaticPaths() {
-  const { events_categories } = await import("@/data/data.json");
+  const { events_categories } = await import("/data/data.json");
   const allPaths = events_categories.map((ev) => {
     return {
       params: {
@@ -15,11 +15,10 @@ export async function getStaticPaths() {
       },
     };
   });
-  // console.log(allPaths);
 
   return {
     paths: allPaths,
-    fallback: true,
+    fallback: "blocking",
   };
 }
 
